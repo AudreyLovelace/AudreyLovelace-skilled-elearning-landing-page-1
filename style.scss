@@ -1,0 +1,207 @@
+$grey-blue: #666ca3;
+$dark-blue: #13183f;
+$grey: #83869a;
+$dark-pink: #f74780;
+$light-pink: #ffa7c3;
+$orange-pink: linear-gradient(#ff6f48, #f02aa6);
+$blue-pink: linear-gradient(#4851ff, #f02aa6);
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+@mixin border {
+  border: 1px black solid;
+}
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: linear-gradient(white, white, rgba(93, 27, 146, 0.2));
+}
+.container {
+  padding: 0 35px;
+
+  font-family: Plus Jakarta Sans;
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 1110px;
+  h1 {
+    font-size: 3.5rem;
+    line-height: 5rem;
+    color: $dark-blue;
+  }
+  h2 {
+    font-size: 2.3rem;
+    line-height: 3.6rem;
+  }
+  h3 {
+    font-size: 2.3rem;
+    line-height: 2.9rem;
+  }
+  h4 {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  p,
+  button {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: $grey;
+  }
+  h5 {
+    font-size: 1.14rem;
+    line-height: 2rem;
+  }
+  button {
+    background-color: $dark-blue;
+    color: white;
+    width: 167px;
+    height: 56px;
+    border-radius: 50px;
+    border: none;
+    &:hover {
+      background-color: $grey-blue;
+      cursor: pointer;
+    }
+  }
+}
+header {
+  nav {
+    align-items: center;
+    @include flex();
+    margin-top: 20px;
+  }
+  section {
+    position: relative;
+
+    @include flex(column);
+    margin: 100px 0 150px;
+    height: 380px;
+    width: 457px;
+    button {
+      background-color: white;
+      background-image: $orange-pink;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  // .coffee {
+  //   @include border();
+  //   position: absolute;
+  //   right: 0px;
+  //   top: 0px;
+  //   z-index: -1;
+  //   width: 50vw;
+  //   height: 75vh;
+  //   min-width: 200px;
+  //   background-image: url(assets/image-hero-desktop.png);
+  //   background-size: cover;
+  // }
+}
+main {
+  margin-bottom: 70px;
+  // @include border();
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  div {
+    box-shadow: (0 10px 10px rgba(0, 0, 0, 0.05));
+    // @include border();
+    background-color: white;
+    position: relative;
+    margin-bottom: 40px;
+    border-radius: 15px;
+    position: relative;
+    padding: 3rem 2rem;
+    @include flex(column);
+    img {
+      position: absolute;
+      top: -30px;
+    }
+    a {
+      text-decoration: none;
+      color: $dark-pink;
+      font-size: 1.3rem;
+      &:hover {
+        color: $light-pink;
+      }
+    }
+    p {
+      margin: 1.5rem 0;
+    }
+  }
+  & > :first-child {
+    background-image: $orange-pink;
+    color: white;
+  }
+}
+footer {
+  background-color: $dark-blue;
+  width: 100%;
+  .container {
+    @include flex();
+    height: 120px;
+    align-items: center;
+    button {
+      background-image: $blue-pink;
+      &:hover {
+        filter: brightness(200%);
+      }
+    }
+  }
+}
+@media (min-width: 821px) {
+  .coffee-small {
+    display: none;
+  }
+  .intro-image {
+    z-index: -1;
+    @include border();
+    position: absolute;
+    width: 80vw;
+  }
+}
+@media (max-width: 820px) {
+  .coffee-small {
+    display: none;
+  }
+
+  .container {
+    max-width: 750px;
+    header section {
+      margin: 100px 0;
+    }
+    main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+@media (max-width: 400px) {
+  header {
+    .container {
+      section {
+        width: 100%;
+        height: 300px;
+        margin: 30px 0 20px 0;
+        h1 {
+          font-size: 2rem;
+          line-height: 2rem;
+        }
+      }
+      .coffee-small {
+        margin: 30px 0 0 0;
+        display: block;
+        width: 100%;
+        margin-left: -15px;
+      }
+    }
+  }
+  .container main {
+    grid-template-columns: 100%;
+  }
+}

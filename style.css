@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(white, white, rgba(93, 27, 146, 0.2));
+}
+
+.container {
+  padding: 0 35px;
+  font-family: Plus Jakarta Sans;
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 1110px;
+}
+.container h1 {
+  font-size: 3.5rem;
+  line-height: 5rem;
+  color: #13183f;
+}
+.container h2 {
+  font-size: 2.3rem;
+  line-height: 3.6rem;
+}
+.container h3 {
+  font-size: 2.3rem;
+  line-height: 2.9rem;
+}
+.container h4 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+.container p,
+.container button {
+  font-size: 1.3rem;
+  line-height: 2rem;
+  color: #83869a;
+}
+.container h5 {
+  font-size: 1.14rem;
+  line-height: 2rem;
+}
+.container button {
+  background-color: #13183f;
+  color: white;
+  width: 167px;
+  height: 56px;
+  border-radius: 50px;
+  border: none;
+}
+.container button:hover {
+  background-color: #666ca3;
+  cursor: pointer;
+}
+
+header nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+header section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 100px 0 150px;
+  height: 380px;
+  width: 457px;
+}
+header section button {
+  background-color: white;
+  background-image: linear-gradient(#ff6f48, #f02aa6);
+}
+header section button:hover {
+  opacity: 0.7;
+}
+
+main {
+  margin-bottom: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+main div {
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  position: relative;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main div img {
+  position: absolute;
+  top: -30px;
+}
+main div a {
+  text-decoration: none;
+  color: #f74780;
+  font-size: 1.3rem;
+}
+main div a:hover {
+  color: #ffa7c3;
+}
+main div p {
+  margin: 1.5rem 0;
+}
+main > :first-child {
+  background-image: linear-gradient(#ff6f48, #f02aa6);
+  color: white;
+}
+
+footer {
+  background-color: #13183f;
+  width: 100%;
+}
+footer .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 120px;
+  align-items: center;
+}
+footer .container button {
+  background-image: linear-gradient(#4851ff, #f02aa6);
+}
+footer .container button:hover {
+  filter: brightness(200%);
+}
+
+@media (min-width: 821px) {
+  .coffee-small {
+    display: none;
+  }
+  .intro-image {
+    z-index: -1;
+    border: 1px black solid;
+    position: absolute;
+    width: 80vw;
+  }
+}
+@media (max-width: 820px) {
+  .coffee-small {
+    display: none;
+  }
+  .container {
+    max-width: 750px;
+  }
+  .container header section {
+    margin: 100px 0;
+  }
+  .container main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 400px) {
+  header .container section {
+    width: 100%;
+    height: 300px;
+    margin: 30px 0 20px 0;
+  }
+  header .container section h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  header .container .coffee-small {
+    margin: 30px 0 0 0;
+    display: block;
+    width: 100%;
+    margin-left: -15px;
+  }
+  .container main {
+    grid-template-columns: 100%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
