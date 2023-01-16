@@ -70,18 +70,27 @@ body {
   }
 }
 header {
+  overflow-x: hidden;
   nav {
     align-items: center;
     @include flex();
     margin-top: 20px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &_right {
+      max-width: max-content;
+    }
   }
   section {
     position: relative;
 
     @include flex(column);
     margin: 100px 0 150px;
-    height: 380px;
-    width: 457px;
+    flex: 40%;
     button {
       background-color: white;
       background-image: $orange-pink;
@@ -90,6 +99,7 @@ header {
       }
     }
   }
+
   // .coffee {
   //   @include border();
   //   position: absolute;

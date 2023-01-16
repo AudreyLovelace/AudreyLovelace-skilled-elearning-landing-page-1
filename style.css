@@ -55,6 +55,9 @@ body {
   cursor: pointer;
 }
 
+header {
+  overflow-x: hidden;
+}
 header nav {
   align-items: center;
   display: flex;
@@ -62,14 +65,20 @@ header nav {
   justify-content: space-between;
   margin-top: 20px;
 }
+header .hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+header .hero_right {
+  max-width: max-content;
+}
 header section {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 100px 0 150px;
-  height: 380px;
-  width: 457px;
+  flex: 40%;
 }
 header section button {
   background-color: white;
