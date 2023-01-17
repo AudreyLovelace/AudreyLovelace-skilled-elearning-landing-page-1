@@ -67,18 +67,22 @@ header nav {
 }
 header .hero {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
 header .hero_right {
-  max-width: max-content;
+  z-index: -1;
+  display: block;
+  position: relative;
+  width: 150%;
+  top: -50px;
+  min-width: 400px;
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }
 header section {
+  min-width: 400px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 100px 0 150px;
-  flex: 40%;
+  margin: 100px 50px 50px 0;
 }
 header section button {
   background-color: white;
@@ -86,6 +90,10 @@ header section button {
 }
 header section button:hover {
   opacity: 0.7;
+}
+header section h1,
+header section p {
+  margin-bottom: 20px;
 }
 
 main {
@@ -148,12 +156,6 @@ footer .container button:hover {
   .coffee-small {
     display: none;
   }
-  .intro-image {
-    z-index: -1;
-    border: 1px black solid;
-    position: absolute;
-    width: 80vw;
-  }
 }
 @media (max-width: 820px) {
   .coffee-small {
@@ -168,12 +170,19 @@ footer .container button:hover {
   .container main {
     grid-template-columns: repeat(2, 1fr);
   }
+  header .hero_right {
+    top: 0;
+  }
 }
 @media (max-width: 400px) {
+  header .hero {
+    grid-template-columns: 1fr;
+  }
   header .container section {
     width: 100%;
     height: 300px;
     margin: 30px 0 20px 0;
+    min-width: unset;
   }
   header .container section h1 {
     font-size: 2rem;
@@ -184,6 +193,9 @@ footer .container button:hover {
     display: block;
     width: 100%;
     margin-left: -15px;
+  }
+  header .hero_right {
+    display: none;
   }
   .container main {
     grid-template-columns: 100%;
